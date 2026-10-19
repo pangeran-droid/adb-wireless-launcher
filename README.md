@@ -24,6 +24,7 @@ A lightweight bash script to automate **Android Wireless Debugging (ADB)** setup
 - **Dependency Check:** Verifies and offers to install `scrcpy` automatically if it's missing.
 - **One-Command Setup:** Connects wirelessly and opens screen mirroring in a single run, correctly targeting the wireless device even if USB is still plugged in.
 
+## Example
 ```bash
 ubuntu@ubuntu:~/adb-wireless-launcher$ ./wireless-adb.sh 
 
