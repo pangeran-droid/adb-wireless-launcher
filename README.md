@@ -24,6 +24,44 @@ A lightweight bash script to automate **Android Wireless Debugging (ADB)** setup
 - **Dependency Check:** Verifies and offers to install `scrcpy` automatically if it's missing.
 - **One-Command Setup:** Connects wirelessly and opens screen mirroring in a single run, correctly targeting the wireless device even if USB is still plugged in.
 
+```bash
+ubuntu@ubuntu:~/adb-wireless-launcher$ ./wireless-adb.sh 
+
+                       ▄▄█   █▄▄        
+                      ████   ████       
+                      █▓▓█   █▓▓█        Wireless & Scrcpy Launcher
+  ▄▄█▓██▓█▄▄      ▄▄▄ ▒▒▓▓▄ ▄▓▓▒▒ ▄▄▄   
+ ▓▀▓▓▀  ▀▓▓█▓   ▄▒▓█▀▀█░▒▀   ▀▒░█▀▀█▓▒▄ 
+▒▒░░      ░░▒▒ ▄░░▒   ██░▒   ▒░██   ▒░░▄
+▀░░█▄    ▄█░░█ ▀██░   ███░   ░███   ░██▀
+  ▀███▄▄██████  ▀██▌ ▐████   ████▌ ▐██▀ 
+    ▀▀▀▀▀▀ ▀▀▀    ▀███▀ ▀█   █▀ ▀███▀   
+
+[+] Searching for connected Android devices...
+[+] Target device found: ABCDXXXXXXXXXXX
+[+] Restarting ADB in TCP/IP mode (port 5555)...
+restarting in TCP mode port: 5555
+[+] Fetching device IP address...
+[+] IP acquired successfully: 192.168.x.x
+[+] Connecting to 192.168.x.x:5555...
+connected to 192.168.x.x:5555
+-----------------------------------
+List of devices attached
+ABCDXXXXXXXXXXX	device
+192.168.x.x:5555	device
+
+-----------------------------------
+[+] Success! You can now unplug the USB cable.
+[+] Launching scrcpy on 192.168.x.x:5555...
+scrcpy 1.25 <https://github.com/Genymobile/scrcpy>
+/usr/share/scrcpy/scrcpy-server: 1 file pushed, 0 skipped. 4.8 MB/s (41650 bytes in 0.008s)
+[server] INFO: Device: Generic (Android x)
+INFO: Renderer: opengl
+INFO: OpenGL version: 4.6 (Compatibility Profile) Mesa 25.x.x-0ubuntu0.26.x.x
+INFO: Trilinear filtering enabled
+INFO: Initial texture: 720x1560
+```
+
 ## Prerequisites
 Make sure you have `adb` installed on your system:
 ```bash
