@@ -2,6 +2,7 @@
 
 # ==========================================
 # ADB Wireless & Scrcpy Auto Launcher
+# devops by github.com/pangeran-droid
 # ==========================================
 
 set -euo pipefail
@@ -13,7 +14,17 @@ if ! command -v adb &> /dev/null; then
     exit 1
 fi
 
-echo "=== ADB Wireless & Scrcpy Launcher ==="
+echo ""
+echo -e "\033[0;37m                       ▄\033[0;97m▄█\033[0;37m   \033[0;97m█▄\033[0;37m▄        \033[0m"
+echo -e "\033[0;37m                      \033[0;97m████\033[0;37m   \033[0;97m████\033[0;37m       \033[0m"
+echo -e "\033[0;37m                      \033[0;97m█\033[0;97;47m▓▓\033[0;97m█\033[0;37m   \033[0;97m█\033[0;97;47m▓▓\033[0;97m█\033[0;37m       \033[0m Wireless & Scrcpy Launcher"
+echo -e "\033[0;37m  \033[0;97m▄▄\033[0;97;47m█▓\033[0;97m██\033[0;97;47m▓█\033[0;97m▄▄\033[0;37m      \033[0;97m▄▄▄\033[0;37m \033[0;97;47m▒▒▓▓\033[0;97m▄\033[0;37m \033[0;97m▄\033[0;97;47m▓▓▒▒\033[0;37m \033[0;97m▄▄▄\033[0;37m   \033[0m"
+echo -e "\033[0;37m \033[0;97;47m▓\033[0;37m▀\033[0;97;47m▓▓\033[0;37m▀  ▀\033[0;97;47m▓▓\033[0;97m█\033[0;97;47m▓\033[0;37m   \033[0;97m▄\033[0;97;47m▒▓\033[0;97m█▀▀\033[0;37m█\033[0;97;47m░▒\033[0;97m▀\033[0;37m   \033[0;97m▀\033[0;97;47m▒░\033[0;37m█\033[0;97m▀▀█\033[0;97;47m▓▒\033[0;37m▄ \033[0m"
+echo -e "\033[0;97;47m▒▒░░\033[0;37m      \033[0;97;47m░░▒▒\033[0;37m ▄\033[0;97;47m░░▒\033[0;37m   ██\033[0;97;47m░▒\033[0;37m   \033[0;97;47m▒░\033[0;37m██   \033[0;97;47m▒░░\033[0;37m▄\033[0m"
+echo -e "\033[0;37m▀\033[0;97;47m░░\033[0;37m█▄    ▄█\033[0;97;47m░░\033[0;37m█ ▀██\033[0;97;47m░\033[0;37m   ███\033[0;97;47m░\033[0;37m   \033[0;97;47m░\033[0;37m███   \033[0;97;47m░\033[0;37m██▀\033[0m"
+echo -e "\033[0;37m  ▀███▄▄██████  ▀██▌ ▐████   ████▌ ▐██▀ \033[0m"
+echo -e "\033[0;37m    ▀▀▀▀▀▀ ▀▀▀    ▀███▀ ▀█   █▀ ▀███▀   \033[0m"
+echo ""
 
 # Detect the first connected USB device (must be in 'device' state, not 'unauthorized'/'offline')
 echo "[+] Searching for connected Android devices..."
@@ -44,7 +55,7 @@ fi
 # Manual prompt if automatic detection fails entirely
 if [ -z "$IP_ADDRESS" ]; then
     echo "[!] Could not detect IP automatically. Please enter it manually:"
-    read -r -p "Device IP (e.g., 192.168.1.5): " IP_ADDRESS
+    read -r -p "Device IP (e.g., 192.168.x.x): " IP_ADDRESS
 else
     echo "[+] IP acquired successfully: $IP_ADDRESS"
 fi
